@@ -2,7 +2,7 @@
 
 import numpy as np
 import pickle
-#import os
+import os
 from flask import Flask, request, render_template
 
 # Load ML model
@@ -39,6 +39,7 @@ def predict():
 
 if __name__ == '__main__':
 #Run the application
-    app.run()
+    port = od.environ.get("POST", 5000)
+    app.run(debug=False, host="0.0.0.0",port=port)
     
     
